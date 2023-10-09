@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { gapTransition } from "./transitions.css";
 
 const areas = {
 	header: "header",
@@ -7,34 +8,36 @@ const areas = {
 	footer: "footer",
 } as const;
 
-export const shell = style({
-	height: "100vh",
-	maxHeight: "100vh",
-	display: "grid",
-	transition: "gap 0.2s",
+export const shell = style([
+	gapTransition,
+	{
+		height: "100vh",
+		maxHeight: "100vh",
+		display: "grid",
 
-	gridTemplateAreas: `
+		gridTemplateAreas: `
 		"${areas.header}"
 		"${areas.main}"
 		"${areas.footer}"
 		"${areas.nav}"
 	`,
-	gridTemplateRows: "min-content 1fr min-content min-content",
-	gap: 16,
+		gridTemplateRows: "min-content 1fr min-content min-content",
+		gap: 16,
 
-	"@media": {
-		"screen and (min-width: 480px)": {
-			gridTemplateAreas: `
+		"@media": {
+			"screen and (min-width: 480px)": {
+				gridTemplateAreas: `
 				"${areas.header} ${areas.header}"
 				"${areas.nav}    ${areas.main}"
 				"${areas.footer} ${areas.footer}"
 			`,
-			gridTemplateColumns: "200px auto",
-			gridTemplateRows: "min-content 1fr min-content",
-			gap: 24,
+				gridTemplateColumns: "200px auto",
+				gridTemplateRows: "min-content 1fr min-content",
+				gap: 24,
+			},
 		},
 	},
-});
+]);
 
 const area = style({
 	overflow: "auto",
