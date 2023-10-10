@@ -1,14 +1,14 @@
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import * as styles from "./stack.css";
-import { type Gap, getResponsiveGap } from "./responsive-gap";
+import { type ResponsiveUnit, getResponsiveUnit } from "./responsive-unit";
 
 type Props = {
-	space: Gap;
+	space: ResponsiveUnit;
 	children: React.ReactNode;
 };
 
 const Stack = ({ space, children }: Props) => {
-	const gap = getResponsiveGap(space);
+	const gap = getResponsiveUnit(space);
 	return (
 		<div
 			className={styles.stack}

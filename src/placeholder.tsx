@@ -1,15 +1,16 @@
 type Props = {
 	height?: number | string;
+	width?: number | string;
 	children?: React.ReactNode;
 };
 
-const Placeholder = ({ height = 120, children }: Props) => (
+const Placeholder = ({ height = 120, width = "auto", children }: Props) => (
 	<div
 		style={{
-			width: "auto",
+			width,
 			height,
 			background: "#eee",
-			border: "2px solid #fff",
+			border: "2px solid #aaa",
 			boxSizing: "border-box",
 			display: "grid",
 			placeItems: "center",
