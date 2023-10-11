@@ -11,8 +11,8 @@ const areas = {
 export const shell = style([
 	gapTransition,
 	{
-		height: "100vh",
-		maxHeight: "100vh",
+		height: "100dvh",
+		maxHeight: "100dvh",
 		display: "grid",
 		marginBottom: "env(safe-area-inset-bottom)",
 
