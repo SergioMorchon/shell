@@ -12,7 +12,7 @@ const getSpacingStyles = ({
 	padding,
 }: Record<"gap" | "padding", string>) =>
 	({
-		width: `calc(100%-2*${padding})`,
+		width: `calc(100% - 2 * ${padding})`,
 		padding: padding,
 		scrollPadding: `0 ${padding}`,
 		gap: gap,
