@@ -41,6 +41,22 @@ const DialogSample = () => {
 	);
 };
 
+const CarouselSample = () => {
+	const [index, setIndex] = useState(0);
+
+	return (
+		<Stack space={4}>
+			<Carousel gap={carouselGap} padding={screenEdgeSpace} onChange={setIndex}>
+				<Placeholder width={250}>Slide 1</Placeholder>
+				<Placeholder width={250}>Slide 2</Placeholder>
+				<Placeholder width={250}>Slide 3</Placeholder>
+				<Placeholder width={250}>Slide 4</Placeholder>
+			</Carousel>
+			Selected index: {index}
+		</Stack>
+	);
+};
+
 const App = () => (
 	<Shell
 		header={<Placeholder>Header</Placeholder>}
@@ -58,12 +74,7 @@ const App = () => (
 					</Carousel>
 					<Placeholder height="100vh">Main 2</Placeholder>
 				</Inline>
-				<Carousel gap={carouselGap} padding={screenEdgeSpace}>
-					<Placeholder width={250}>Slide 1</Placeholder>
-					<Placeholder width={250}>Slide 2</Placeholder>
-					<Placeholder width={250}>Slide 3</Placeholder>
-					<Placeholder width={250}>Slide 4</Placeholder>
-				</Carousel>
+				<CarouselSample />
 				<Inline space={screenEdgeSpace}>
 					<Placeholder height="20vh">Main 3</Placeholder>
 					<Placeholder height="100vh">Main 4</Placeholder>
