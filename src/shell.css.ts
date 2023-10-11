@@ -14,6 +14,7 @@ export const shell = style([
 		height: "100vh",
 		maxHeight: "100vh",
 		display: "grid",
+		marginBottom: "env(safe-area-inset-bottom)",
 
 		gridTemplateAreas: `
 		"${areas.header}"

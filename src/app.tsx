@@ -25,8 +25,7 @@ const DialogSample = () => {
 	const [text, setText] = useState<string>("");
 
 	return (
-		<Stack space={8}>
-			Current text: "{text}"
+		<Inline space={8}>
 			<button
 				onClick={() =>
 					showModal(TextDialog).then((response) => {
@@ -36,8 +35,9 @@ const DialogSample = () => {
 			>
 				Show modal text dialog
 			</button>
+			<div>Current text: "{text}"</div>
 			{dialog}
-		</Stack>
+		</Inline>
 	);
 };
 
@@ -63,17 +63,8 @@ const App = () => (
 		nav={<Placeholder height="100%">Navigation</Placeholder>}
 		main={
 			<Stack space={[16, 32]}>
-				<Inline space={screenEdgeSpace}>
-					<Carousel gap={carouselGap}>
-						<Placeholder width={250}>
-							<DialogSample />
-						</Placeholder>
-						<Placeholder width={250}>Slide 2</Placeholder>
-						<Placeholder width={250}>Slide 3</Placeholder>
-						<Placeholder width={250}>Slide 4</Placeholder>
-					</Carousel>
-					<Placeholder height="100vh">Main 2</Placeholder>
-				</Inline>
+				<DialogSample />
+				<Placeholder height="100vh">Main 2</Placeholder>
 				<CarouselSample />
 				<Inline space={screenEdgeSpace}>
 					<Placeholder height="20vh">Main 3</Placeholder>
